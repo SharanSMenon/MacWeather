@@ -11,7 +11,12 @@ import SwiftUI
 struct MacWeatherApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(viewModel: WeatherViewModel(weatherService: WeatherService()))
+            .frame(width:400, height:400)
+        }
+        
+        Settings {
+            SettingsView()
         }
     }
 }
